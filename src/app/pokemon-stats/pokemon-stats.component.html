@@ -1,0 +1,12 @@
+<div>
+    <h6>Type:</h6>
+    <p>{{pokemons[0].type}}</p>
+    <h6>Bio:</h6>
+    <p>{{pokemons[0].bio}}</p>
+    <h6>Evolutions:</h6>
+    <ul>
+        @for (e of pokemons[0].evolutions; track e) {
+            <li><a href="">{{e}}</a></li>
+        }
+    </ul>
+</div>
