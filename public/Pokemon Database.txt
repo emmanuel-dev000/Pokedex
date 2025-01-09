@@ -1,13 +1,6 @@
-export interface Pokemon {
-    id: string;
-    name: string;
-    img: string;
-    types: Array<string>;
-    bio: string;
-    evolutions: Array<string>;
-}
-
-export const Pokemons = 
+// Contains the 151 Generation 01 Pokemons found in Pokemon FireRed and LeafGreen (except Unown or other post-credit Pokemon found in other regions aside from Kanto.).
+// Data scraped from the https://www.pokemon.com/us
+// Copy-pase for your script.
 [
     {
 	    id : "#0001",
@@ -1216,5 +1209,13 @@ export const Pokemons =
 	    types : ["Psychic"],
 	    bio : "When viewed through a microscope, this Pok mon s short, fine, delicate hair can be seen.",
 	    evolutions : []
+    },
+    {
+	    id : "",
+	    name : "",
+	    img : "",
+	    types : []
+	    bio : "",
+	    evolutions : []
     }
-];
+]
