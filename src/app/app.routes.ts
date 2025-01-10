@@ -4,10 +4,10 @@ import { PokemonPokedexComponent } from './pokemon-pokedex/pokemon-pokedex.compo
 
 export const routes: Routes = [
     {
-        path: "pokedex", component: PokemonPokedexComponent
+        path: "pokedex/pokemon/:pokemon-name", component: PokemonPokedexComponent
     },
     { 
-        path: "", pathMatch: "full", redirectTo: 'pokedex', 
+        path: "", pathMatch: "full", redirectTo: 'pokedex/pokemon/Bulbasaur', 
     },
     { 
         path: "**", component: PageNotFoundComponent

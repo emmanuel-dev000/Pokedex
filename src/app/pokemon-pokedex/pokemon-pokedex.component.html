@@ -1,3 +1,28 @@
-<app-pokemon-card [pokemon]="pokemons[activeId]"></app-pokemon-card>
-<app-pokemon-stats [pokemon]="pokemons[activeId]"></app-pokemon-stats>
-<app-pokemon-more [pokemons]="pokemons" ></app-pokemon-more>
+<div>
+  <p>{{activePokemon?.name}}</p>
+  <img [src]="activePokemon?.img" [alt]="activePokemon?.name">
+</div>
+
+<div>
+  <h6>Type:</h6>
+  <ul>
+      @for (e of activePokemon?.types; track e) {
+          <li><a href="">{{e}}</a></li>
+      }
+  </ul>
+  <h6>Bio:</h6>
+  <p>{{activePokemon?.bio}}</p>
+  <h6>Evolutions:</h6>
+  <ul>
+      @for (e of activePokemon?.evolutions; track e) {
+        <li><a [routerLink]="['/pokedex/pokemon/', e]">{{e}}</a></li>
+      }
+  </ul>
+</div>
+
+<h2>More:</h2>
+<ul>
+    @for (p of pokemons; track p.id) {
+        <li><a [routerLink]="['/pokedex/pokemon/', p.name]">{{p.name}}</a></li>
+    }
+</ul>
