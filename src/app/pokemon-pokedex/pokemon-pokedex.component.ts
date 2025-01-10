@@ -13,6 +13,7 @@ import { Pokemon } from '../pokemon.database';
 })
 export class PokemonPokedexComponent {
   pokemons : Array<Pokemon> = [];
+  activeId : number = 0;
   constructor(private pokemonService : PokemonService) {
     this.pokemons = pokemonService.pokemons;
   }
