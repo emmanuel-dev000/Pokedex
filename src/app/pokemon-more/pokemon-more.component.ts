@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Pokemon } from '../pokemon.database';
 import { PokemonService } from '../pokemon.service';
 
@@ -9,9 +9,5 @@ import { PokemonService } from '../pokemon.service';
   styleUrl: './pokemon-more.component.css'
 })
 export class PokemonMoreComponent {
-  pokemons : Array<Pokemon> = [];
-  
-  constructor(private pokemonService : PokemonService) {
-    this.pokemons = pokemonService.pokemons;
-  }
+  @Input({required: true}) pokemons : Array<Pokemon> = [];
 }

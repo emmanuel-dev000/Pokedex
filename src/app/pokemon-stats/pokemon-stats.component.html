@@ -1,15 +1,15 @@
 <div>
     <h6>Type:</h6>
     <ul>
-        @for (e of pokemons[0].types; track e) {
+        @for (e of pokemon.types; track e) {
             <li><a href="">{{e}}</a></li>
         }
     </ul>
     <h6>Bio:</h6>
-    <p>{{pokemons[0].bio}}</p>
+    <p>{{pokemon.bio}}</p>
     <h6>Evolutions:</h6>
     <ul>
-        @for (e of pokemons[0].evolutions; track e) {
+        @for (e of pokemon.evolutions; track e) {
             <li><a href="">{{e}}</a></li>
         }
     </ul>
