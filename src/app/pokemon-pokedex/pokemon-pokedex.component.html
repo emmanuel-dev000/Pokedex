@@ -1,28 +1,40 @@
-<div>
-  <p>{{activePokemon?.name}}</p>
-  <img [src]="activePokemon?.img" [alt]="activePokemon?.name">
+<div class="container">
+  <div class="pokemon-card">
+    <p>{{activePokemon?.name}}</p>
+    <img [src]="activePokemon?.img" [alt]="activePokemon?.name">
+  </div>
+  <div class="pokemon-stats">
+      <h2>Id:</h2>
+      <p>{{activePokemon?.id}}</p>
+      <h2>Bio:</h2>
+      <p>{{activePokemon?.bio}}</p>
+      <h2>Type:</h2>
+      <ul>
+          @for (e of activePokemon?.types; track e) {
+              <li><a href="">{{e}}</a></li>
+          }
+      </ul>
+      <h2>Evolutions:</h2>
+      @if (activePokemon?.evolutions?.length == 0) {
+        <p>No evolutions.</p>
+      } @else {
+        <ul>
+            @for (e of activePokemon?.evolutions; track e) {
+              <li><a [routerLink]="['/pokedex/pokemon/', e]">{{e}}</a></li>
+            }
+        </ul>
+      }
+  </div>
 </div>
-
-<div>
-  <h6>Type:</h6>
+<div class="pokemon-more">
+  <h2>More:</h2>
   <ul>
-      @for (e of activePokemon?.types; track e) {
-          <li><a href="">{{e}}</a></li>
+      @for (p of pokemons; track p.id) {
+          <li><a [routerLink]="['/pokedex/pokemon/', p.name]">{{p.name}}</a></li>
       }
   </ul>
-  <h6>Bio:</h6>
-  <p>{{activePokemon?.bio}}</p>
-  <h6>Evolutions:</h6>
-  <ul>
-      @for (e of activePokemon?.evolutions; track e) {
-        <li><a [routerLink]="['/pokedex/pokemon/', e]">{{e}}</a></li>
-      }
-  </ul>
 </div>
 
-<h2>More:</h2>
-<ul>
-    @for (p of pokemons; track p.id) {
-        <li><a [routerLink]="['/pokedex/pokemon/', p.name]">{{p.name}}</a></li>
-    }
-</ul>
+<footer style="display: flex; align-self: center; justify-content: center; padding: 0; margin-left: 24px;">
+    Credits: All of the data were scraped from "pokemon.com/usa". This website only serves as a learning material and does not have anything to do with the "The Pokemmon Company" or any affiliates.
+</footer>
